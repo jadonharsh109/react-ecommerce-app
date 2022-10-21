@@ -18,7 +18,7 @@ const Nav = () => {
           text-decoration: none;
           font-size: 1.8rem;
           font-weight: 500;
-          text-transform: uppercase;
+          text-transform: capitalize;
           color: ${({ theme }) => theme.colors.black};
           transition: color 0.3s linear;
         }

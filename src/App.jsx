@@ -10,6 +10,7 @@ import SingleProduct from "./components/SingleProduct";
 import Cart from "./components/Cart";
 import ErrorPage from "./components/ErrorPage";
 import Header from "./otherComponent/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const theme = {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );

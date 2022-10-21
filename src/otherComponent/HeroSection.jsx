@@ -5,7 +5,7 @@ import { Button } from "./../styles/Button";
 
 const HeroSection = ({ title }) => {
   const Wrapper = styled.section`
-    padding: 12rem 0;
+    padding: 8rem 0;
     img {
       min-width: 10rem;
       height: 10rem;
@@ -75,10 +75,13 @@ const HeroSection = ({ title }) => {
             <p className="intro-data">Welcome To</p>
             <h1>{title}</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam
-              laboriosam sint velit reiciendis! Optio ut fuga laboriosam quis
-              sed, quibusdam consequatur animi dicta et rerum eaque incidunt
-              quia repudiandae autem maiores rem unde.
+              E-commerce (electronic commerce) is the activity of electronically
+              buying or selling of products on online services or over the
+              Internet. E-commerce draws on technologies such as mobile
+              commerce, electronic funds transfer, supply chain management,
+              Internet marketing, online transaction processing, electronic data
+              interchange (EDI), inventory management systems, and automated
+              data collection systems.
             </p>
             <NavLink to="/products">
               <Button>Shop Now</Button>
