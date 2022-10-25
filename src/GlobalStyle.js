@@ -130,8 +130,8 @@ ${"" /* resuable code section  */}
 
    .caption {
       position: absolute;
-      top: 15%;
-      right: 10%;
+      top: 2%;
+      right: 5%;
       text-transform: uppercase;
       background-color: ${({ theme }) => theme.colors.bg};
       color: ${({ theme }) => theme.colors.helper};

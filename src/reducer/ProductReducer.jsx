@@ -18,11 +18,24 @@ const ProductReducer = (state, action) => {
         products: action.payload,
       };
 
+    case "SINGLE_PAGE_LOADING":
+      return {
+        ...state,
+        isSingleLoading: true,
+      };
+    case "SINGLE_API_DATA":
+      return {
+        ...state,
+        isSingleLoading: false,
+        SingleProduct: action.payload,
+      };
     case "API_ERROR":
       return {
         ...state,
         isError: true,
       };
+    default:
+      return state;
   }
 };
 

@@ -10,21 +10,19 @@ const CreateProductContext = createContext();
 const API = "https://api.pujakaitem.com/api/products";
 
 const ProductContextProvider = ({ children }) => {
-  useEffect(() => {
-    FetchedProduct(API);
-  }, []);
-
   const initState = {
     isLoading: false,
     isError: false,
     products: [],
     featureProducts: [],
+    isSingleLoading: false,
+    SingleProduct: {},
   };
 
   const [state, dispatch] = useReducer(reducer, initState);
 
   const FetchedProduct = async (url) => {
-    dispatch("PAGE_LOADING");
+    dispatch({ type: "PAGE_LOADING" });
     try {
       const getProduct = await axios.get(url);
       const getData = getProduct.data;
@@ -35,8 +33,24 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  const FetchSingleProduct = async (url) => {
+    dispatch({ type: "SINGLE_PAGE_LOADING" });
+    try {
+      const getSingleProduct = await axios.get(url);
+      const getData = getSingleProduct.data;
+      dispatch({ type: "SINGLE_API_DATA", payload: getData });
+    } catch (error) {
+      console.log(error);
+      dispatch("API_ERROR");
+    }
+  };
+
+  useEffect(() => {
+    FetchedProduct(API);
+  }, []);
+
   return (
-    <CreateProductContext.Provider value={{ ...state }}>
+    <CreateProductContext.Provider value={{ ...state, FetchSingleProduct }}>
       {children}
     </CreateProductContext.Provider>
   );

@@ -1,17 +1,22 @@
 import React from "react";
 import { useContext } from "react";
 import { CreateProductContext } from "../context/ProductContext";
+import Card from "../otherComponent/Card";
+import styled from "styled-components";
 
 const Products = () => {
   const { products } = useContext(CreateProductContext);
 
+  const Wrapper = styled.section`
+    margin-top: 10rem;
+  `;
+
   return (
-    <div>
-      {products.map((mappingData) => {
-        return <h2>{mappingData.name}</h2>;
-      })}
-      ;
-    </div>
+    <Wrapper>
+      <div className="container">
+        <Card whatToMap={products} />
+      </div>
+    </Wrapper>
   );
 };
 

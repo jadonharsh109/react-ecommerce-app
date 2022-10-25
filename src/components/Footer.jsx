@@ -9,6 +9,7 @@ const Footer = () => {
     height: 50vh;
     background-color: ${({ theme }) => theme.colors.footer_bg};
     color: ${({ theme }) => theme.colors.white};
+    margin-top: 20rem;
 
     .upper-footer {
       display: flex;
