@@ -10,6 +10,7 @@ const FeaturedProductSection = () => {
   const Wrapper = styled.section`
     .container {
       text-align: center;
+      margin-top: 5rem;
     }
   `;
   return (

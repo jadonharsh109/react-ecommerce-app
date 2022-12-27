@@ -24,12 +24,13 @@ const Footer = () => {
       bottom: 5rem;
       margin: auto;
       font-size: 1.4rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     .middle-footer {
       width: 90%;
       height: 30vh;
       text-align: center;
-      margin: 2rem auto;
+      padding: 5rem auto;
     }
     .middle-footer-1,
     .middle-footer-2,
@@ -79,6 +80,35 @@ const Footer = () => {
         transition: 0.5s;
       }
     }
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+      margin-top: 2rem;
+      height: fit-content;
+      .grid {
+        gap: 2rem;
+      }
+      .btn {
+        padding: 0.4rem 2.4rem;
+      }
+      .upper-footer {
+        border-radius: 5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      .name {
+        font-size: 2rem;
+      }
+      .icon-container {
+        justify-content: center;
+      }
+      .footer-icon {
+        font-size: 5rem !important;
+        padding: 5px;
+      }
+      .middle-footer {
+        height: fit-content;
+        margin: auto;
+        padding: 3rem 2rem;
+      }
+    }
   `;
   return (
     <Wrapper>
@@ -90,24 +120,24 @@ const Footer = () => {
             Talk to us today.
           </div>
           <div className="upper-footer-right">
-            <Button>GET STARTED</Button>
+            <Button className="btn">GET STARTED</Button>
           </div>
         </div>
         <div className="middle-footer grid grid-four-column">
           <div className="middle-footer-1">
-            <p className="bold">Harshvardhan Singh Jadon</p>
+            <p className="bold name">Harshvardhan Singh Jadon</p>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab,
               dolore.
             </p>
           </div>
           <div className="middle-footer-2">
-            <p className="bold">Subscribe To get Important Updates</p>
+            <p className="bold name">Subscribe To get Important Updates</p>
             <input type="text" placeholder="Enter Your Email" />
             <Button className="btn-footer">SUBSCRIBE</Button>
           </div>
           <div className="middle-footer-3">
-            <p className="bold">Follow Us</p>
+            <p className="bold name">Follow Us</p>
             <div className="icon-container">
               <a href="https://github.com/jadonharsh109" target="blank">
                 <AiFillGithub className="footer-icon" />
@@ -127,7 +157,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="middle-footer-4">
-            <p className="bold">Call Us</p>
+            <p className="bold name">Call Us</p>
             <a href="tel:+917691997918" target="blank">
               +91 7691997918
             </a>

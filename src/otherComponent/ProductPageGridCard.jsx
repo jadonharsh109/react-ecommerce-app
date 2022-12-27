@@ -7,8 +7,8 @@ const Card = ({ whatToMap }) => {
   const Wrapper = styled.section`
     .cover {
       position: relative;
-      width: 300px;
-      height: 350px;
+      width: 25rem;
+      height: 32rem;
       background: #fff;
       margin: 0 auto;
       border-radius: 4px;
@@ -28,14 +28,14 @@ const Card = ({ whatToMap }) => {
         transition: 0.5s;
         z-index: -1;
       }
-      &:hover:before {
+      /* &:hover:before {
         transform: rotate(20deg);
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
       }
       &:hover:after {
         transform: rotate(10deg);
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-      }
+      } */
       .featureProducts-cards {
         position: absolute;
         top: 10px;
@@ -76,45 +76,29 @@ const Card = ({ whatToMap }) => {
         }
       }
     }
-    @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      .cover {
-        width: 30rem;
-        height: 30rem;
-        padding: 2rem;
-        img {
-          width: 25rem;
-        }
-      }
-    }
   `;
 
   return (
     <Wrapper>
-      <div className="grid grid-three-column">
-        {whatToMap.map(({ id, name, image, price, category }) => {
-          return (
-            <NavLink to={`/singleproduct/${id}`} key={id}>
-              <div className="featureProducts-cards" key={id}>
-                <div className="cover">
-                  <figure>
-                    <img src={image} alt={name} />
-                    <figcaption className="caption">{category}</figcaption>
-                  </figure>
-                  <div className="details">
-                    <h2>
-                      {name}
-                      <br />
-                      <span>
-                        <PriceFormat price={price} />
-                      </span>
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-          );
-        })}
-      </div>
+      <NavLink to={`/singleproduct/${whatToMap.id}`} key={whatToMap.id}>
+        <div className="featureProducts-cards" key={whatToMap.id}>
+          <div className="cover">
+            <figure>
+              <img src={whatToMap.image} alt={whatToMap.name} />
+              <figcaption className="caption">{whatToMap.category}</figcaption>
+            </figure>
+            <div className="details">
+              <h2>
+                {whatToMap.name}
+                <br />
+                <span>
+                  <PriceFormat price={whatToMap.price} />
+                </span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </NavLink>
     </Wrapper>
   );
 };

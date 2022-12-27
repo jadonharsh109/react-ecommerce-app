@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "./../styles/Button";
-
 const HeroSection = ({ title }) => {
   const Wrapper = styled.section`
     padding: 8rem 0;
@@ -29,36 +28,71 @@ const HeroSection = ({ title }) => {
       justify-content: center;
       align-items: center;
     }
-    figure {
+    .scroll-animation {
       position: relative;
+
       &::after {
         content: "";
-        width: 80%;
-        height: 90%;
-        background-color: rgb(228 38 38 / 67%);
+        width: 100%;
+        height: 100%;
+        background-color: #84c5ff63;
         position: absolute;
-        left: 30%;
-        top: -5rem;
+        left: 0;
+        top: 5rem;
+        z-index: -1;
+        -webkit-transition: 0.5s;
+        transition: 0.7s;
+      }
+
+      &:hover::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #84c5ff63;
+        position: absolute;
+        left: 6rem;
+        top: -1rem;
         z-index: -1;
       }
     }
     .img-style {
       width: 100%;
       height: auto;
+      position: relative;
+    top: 5rem;
     }
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
       padding: 6rem 0;
       .grid {
-        gap: 10rem;
+        gap: 0;
       }
-      figure::after {
+      .scroll-animation {
+
+      &::after {
         content: "";
         width: 100%;
         height: 100%;
-        left: 2rem;
-        top: 2rem;
-        background-color: rgb(228 38 38 / 67%);
+        background-color: #84c5ff63;
+        position: absolute;
+        left: 0;
+        top: 5rem;
+        z-index: -1;
+        -webkit-transition: 0.5s;
+        transition: 0.7s;
       }
+
+      &:hover::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #84c5ff63;
+        position: absolute;
+        left: 0;
+        top: 5rem;
+        z-index: -1;
+      }
+    }
+
       .hero-section-data {
 
         h1 {
@@ -88,9 +122,9 @@ const HeroSection = ({ title }) => {
             </NavLink>
           </div>
           <div className="hero-section-img">
-            <figure>
+            <figure className="scroll-animation">
               <img
-                src="images/img-2.jpg"
+                src="images/img-shopping.jpg"
                 alt="Hero-Img"
                 className="img-style"
               />
