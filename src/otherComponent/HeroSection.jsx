@@ -99,7 +99,8 @@ const HeroSection = ({ title }) => {
             font-size: 5rem;
         }
     }
-  `;
+  }
+  `
 
   return (
     <Wrapper>
